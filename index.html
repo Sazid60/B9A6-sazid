@@ -12,7 +12,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -25,12 +27,20 @@
                     <img src="images/logo.png" alt="">
                 </div>
                 <div class="space-x-4 flex justify-center">
-                    <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
-                    <button class="btn rounded-full"><i class="fa-solid fa-pen"></i></button>
-                    <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
-                    <button class="btn rounded-full"><i class="fa-solid fa-flag"></i></button>
+                    <div class="tooltip" data-tip="Home">
+                        <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Write">
+                        <button class="btn rounded-full"><i class="fa-solid fa-pen"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Add">
+                        <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
+                    </div>
+                    <div class="tooltip" data-tip="Mark">
+                        <button class="btn rounded-full"><i class="fa-solid fa-flag"></i></button>
+                    </div>
                     <button class="btn rounded-2xl bg-[#797DFC] text-white">Sign In</button>
-                    
+
                 </div>
             </div>
         </nav>
@@ -38,16 +48,20 @@
 
         <!-- Banner Start -->
         <section>
-            <div class="bg-[url('images/Banner.png')] bg-no-repeat bg-cover rounded-[50px] p-12 lg:p-24 mt-7 lg:mt-14 lg:flex lg:justify-between">
+            <div
+                class="bg-[url('images/Banner.png')] bg-no-repeat bg-cover rounded-[50px] p-12 lg:p-24 mt-7 lg:mt-14 lg:flex lg:justify-between">
                 <div class="">
                     <h1 class="text-white text-3xl lg:text-6xl font-black">Welcome to the <br>
                         <span class="text-[#797DFC]">ReTro </span>
-                        Forum</h1>
+                        Forum
+                    </h1>
                     <p class="text-white mt-5 text-xl mb-8">Share your favorite opinion and win and wp <br>
-                         forum coffee mug!</p>
+                        forum coffee mug!</p>
                     <div class="flex gap-0">
-                        <input type="text" placeholder="Search here anything" id="" class="pl-4 py-4 pr-12 lg:pr-24 border rounded-l-3xl text-xs">
-                        <input type="button" class="px-6 py-4 bg-[#797DFC] text-white rounded-r-3xl text-sm font-bold" value="Search">
+                        <input type="text" placeholder="Search here anything" id=""
+                            class="pl-4 py-4 pr-12 lg:pr-24 border rounded-l-3xl text-xs">
+                        <input type="button" class="px-6 py-4 bg-[#797DFC] text-white rounded-r-3xl text-sm font-bold"
+                            value="Search">
                     </div>
                 </div>
                 <div class="bg-white rounded-3xl p-6 lg:p-12 lg:mt-0 mt-3">
@@ -73,7 +87,7 @@
                             <!-- Add more rows as needed -->
                         </tbody>
                     </table>
-                    
+
                 </div>
             </div>
 
@@ -83,8 +97,34 @@
     <!-- Header End -->
 
     <!-- Main Start -->
-    <main>
+    <main class="container mx-auto mt-9">
+        <!-- Lets Discuss Section Start -->
+        <section>
 
+        </section>
+        <!-- Lets Discuss Section End -->
+
+        <!-- Another Banner Start -->
+        <section>
+            <div
+                class="bg-[url('images/Banner.png')] bg-no-repeat bg-cover rounded-[50px]  p-12 lg:p-24 mt-7 lg:mt-14 lg:flex lg:justify-between">
+                <div class="lg:pt-20 text-center lg:text-left">
+                    <h1 class="text-white text-3xl lg:text-3xl font-black">Join Our Forum
+                    </h1>
+                    <p class="text-white mt-5 text-lg mb-8 lg:w-[652px]">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app.
+                    </p>
+                    <div class="flex justify-center lg:justify-start items-center lg:items-start">
+                        <input type="button"
+                            class=" w-60 px-6 py-4 bg-[#797DFC] text-white rounded-3xl text-sm font-bold"
+                            value="Register Now">
+                    </div>
+                </div>
+                <div>
+                    <img src="images/joinforum.png" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- Another Banner End  -->
     </main>
     <!-- Main End -->
 
@@ -94,7 +134,8 @@
             <img src="images/logo.png" alt="">
         </div>
         <p class="text-[#12132DB3] mt-4">
-            Your go-to hub for vintage aficionados, where nostalgia thrives. Join our vibrant community and journey back in time with us.
+            Your go-to hub for vintage aficionados, where nostalgia thrives. Join our vibrant community and journey back
+            in time with us.
         </p>
 
         <div class="space-x-5 mb-12 mt-8">
@@ -102,7 +143,8 @@
             <i class="fa-brands fa-facebook text-4xl"></i>
             <i class="fa-brands fa-instagram text-4xl"></i>
             <i class="fa-brands fa-github text-4xl"></i>
-        </div> <hr class="border-t-2 border-dotted border-gray-500 my-8">
+        </div>
+        <hr class="border-t-2 border-dotted border-gray-500 my-8">
         <p class="text-[#12132D80] mt-12 mb-0">
             2023 All Rights Reserved
         </p>
