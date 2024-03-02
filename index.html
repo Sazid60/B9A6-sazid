@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Forum</title>
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
     <!-- Daisy Ui & Tailwind Connect -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,10 +17,22 @@
 
 <body>
     <!-- header Start -->
-    <header>
+    <header class="container mx-auto mt-9">
         <!-- Nav Bar Start -->
         <nav>
-
+            <div class=" lg:flex lg:justify-between items-center space-y-3 lg:space-y-0">
+                <div class="flex justify-center lg:justify-start">
+                    <img src="images/logo.png" alt="">
+                </div>
+                <div class="space-x-4 flex justify-center">
+                    <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
+                    <button class="btn rounded-full"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
+                    <button class="btn rounded-full"><i class="fa-solid fa-flag"></i></button>
+                    <button class="btn rounded-2xl bg-[#797DFC] text-white">Sign In</button>
+                    
+                </div>
+            </div>
         </nav>
         <!-- Nav Bar end  -->
 
@@ -29,7 +43,7 @@
         <!-- Banner End  -->
     </header>
     <!-- Header End -->
-    
+
     <!-- Main Start -->
     <main>
 
@@ -41,6 +55,9 @@
 
     </footer>
     <!-- Footer End  -->
+
+    <!-- Javascript Connection  -->
+    <script src="scripts/scripts.js"></script>
 </body>
 
 </html>
