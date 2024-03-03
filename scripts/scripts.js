@@ -4,6 +4,8 @@ const latestPostsContainer = document.getElementById('latest-Post-Container')
 // Lets Discuss Filed 
 const letsDiscussContainer = document.getElementById('lets-discuss-container')
 const leftCardContainer = document.getElementById('left-card-container')
+const rightSideCardContainer = document.getElementById('right-card')
+const countField = document.getElementById('read-count')
 // Latest post Data Fetch
 const latestPosts = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
@@ -45,22 +47,21 @@ latestPosts()
 
 // Lets Discuss Section Data Fetch
 
-const letsDiscussData = async () => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
+const letsDiscussData = async (searchText) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
-    const allPosts = data.posts
+    const allPosts = data.posts;
     displayLetsDiscussData(allPosts)
 }
 // Display All Posts in the Lets Discuss Section 
 const displayLetsDiscussData = (allPosts) => {
-
+    leftCardContainer.innerHTML=''
     allPosts.forEach(individualPost => {
         // console.log(individualPost.image)
-
-
         const latestPostCardLeft = document.createElement('div')
         const activeStatus = `${individualPost.isActive}`
         // console.log(activeStatus)
+        
         let activeStatusLight = '';
         if (activeStatus === 'true') {
             activeStatusLight = `<span id="active-inactive" class="indicator-item bg-green-400 badge"></span>`
@@ -69,6 +70,7 @@ const displayLetsDiscussData = (allPosts) => {
         else {
             activeStatusLight = `<span id="active-inactive" class="indicator-item bg-red-600 badge"></span>`
         }
+        
         latestPostCardLeft.innerHTML = `
         <div class="bg-white shadow-xl p-5 lg:p-10 space-y-4 rounded-xl lg:flex lg:gap-6">
         <div class="indicator">
@@ -87,7 +89,7 @@ const displayLetsDiscussData = (allPosts) => {
             </div>
             <h1 class="text-xl font-bold mb-4 mt-3">${individualPost.title}</h1>
             <p class="lg:w-[596px] pb-5">${individualPost.description}</p>
-            <hr>
+            <hr class="border-t-2 border-dotted border-gray-500 my-8">
             <div class="flex items-center gap-5 lg:gap-[280px] mt-5">
                 <div class="flex gap-4 lg:gap-8  items-center">
                     <p><i class="fa-regular fa-message"></i> <span> ${individualPost.comment_count}</span></p>
@@ -95,7 +97,7 @@ const displayLetsDiscussData = (allPosts) => {
                     <p><i class="fa-regular fa-clock"></i><span> ${individualPost.posted_time}</span><span> min</span></p>
                 </div>
                 <div>
-                    <button onclick ="rightDataLoad('${individualPost.title}', '${individualPost.view_count}')"class="btn rounded-full bg-green-500"><i
+                    <button onclick ="rightDataLoad('${individualPost.title.replace(/'/g,'')}', '${individualPost.view_count}')"class="btn rounded-full bg-green-500"><i
                             class="fa-regular text-white fa-envelope-open"></i></button>
                 </div>
             </div>
@@ -113,7 +115,7 @@ const rightDataLoad = (title, views) => {
     console.log(clickCount)
     // console.log(title)
     // console.log(views)
-    const rightSideCardContainer = document.getElementById('right-card')
+    
     const rightSideCard = document.createElement('div')
     rightSideCard.innerHTML = `
     <!-- Card mini -->
@@ -127,9 +129,26 @@ const rightDataLoad = (title, views) => {
     </div>
     </div>`
     rightSideCardContainer.appendChild(rightSideCard)
-    const countField = document.getElementById('read-count')
     countField.innerText = clickCount;
 }
+// Search Handler
+const handleSearch = () =>{
+    
+// console.log('Clicked me')
+const searchField = document.getElementById('search-field')
+const searchText = searchField.value.toLowerCase();
+// console.log(searchText)
+if(searchText === 'coding' || searchText === 'music' || searchText === 'comedy'){
+    letsDiscussData(searchText)
+    rightSideCardContainer.innerHTML = ''
+    countField.innerText = 0;
+    clickCount = 0;
+}
+else{
+    alert("Please enter valid string ");
+  }
 
 
-letsDiscussData()
+}
+
+letsDiscussData('')
