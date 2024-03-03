@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Forum</title>
+    <title>SolaireChat Forum</title>
     <!-- Fav Icon -->
     <link rel="icon" type="image/png" href="images/logo.png">
     <!-- Daisy Ui & Tailwind Connect -->
@@ -58,10 +58,11 @@
                         <p class="text-white mt-5 text-xl mb-8">Share your favorite opinion and win and wp <br>
                             forum coffee mug!</p>
                     </div>
-                    <div  class="flex justify-around items-center  lg:w-[400px] h-[68px] bg-white gap-0 rounded-full">
+                    <div class="flex justify-around items-center lg:w-[400px] h-[68px] lg:bg-white gap-0 rounded-full">
                         <input type="text" placeholder="Search here anything" id="search-field"
-                            class="pl-2 py-4 pr-2 lg:pr-24 rounded-l-3xl text-xs">
-                        <button onclick="handleSearch()" class="btn border-0 ml-0 px-6 h-[45px] bg-[#797DFC] text-white rounded-3xl text-sm font-bold">Search</button>
+                            class="pl-2 py-4 pr-2 lg:pr-24 rounded-3xl lg:rounded-l-3xl text-xs">
+                        <button onclick="handleSearch()"
+                            class="btn border-0 ml-0 px-6 h-[45px] bg-[#797DFC] text-white rounded-3xl text-sm font-bold">Search</button>
                     </div>
                 </div>
                 <div class="bg-white rounded-3xl p-6 lg:p-12 lg:mt-0 mt-3 flex justify-center items-center">
@@ -112,20 +113,29 @@
                     </p>
                 </div>
             </div>
-
+            <!-- Loading Spinner Start -->
+            <div id="loading-spinner" class="text-center mb-6 hidden">
+                <span class="loading loading-ball loading-xs bg-[#797DFC]"></span>
+                <span class="loading loading-ball loading-sm bg-[#797DFC]"></span>
+                <span class="loading loading-ball loading-md bg-[#797DFC]"></span>
+                <span class="loading loading-ball loading-lg bg-[#797DFC]"></span>
+            </div>
+            <!-- Loading Spinner End -->
             <!-- Main -->
-            <div id="lets-discuss-container" class="lg:flex lg:gap-4 space-y-4 lg:space-y-0">
+            <div id="lets-discuss-container" class="lg:flex justify-center lg:gap-4 space-y-4 lg:space-y-0">
                 <!-- left -->
-                <div id="left-card-container" class="bg-[#F3F3F5] p-6 space-y-4 rounded-xl w-[100%] lg:w-[65%]">
+                <div id="left-card-container" class="bg-[#F3F3F5] p-5 space-y-4 rounded-xl ">
 
                 </div>
                 <!-- right -->
-                <div class="w-[100%] lg:w-[40%]">
-                    <div class="bg-[#F3F3F5] shadow-xl p-5 lg:p-10 space-y-4 rounded-xl">
+                <div class="lg:w-[455px]">
+                    <div class="bg-[#F3F3F5] shadow-xl p-5 lg:p-5 space-y-4 rounded-xl">
                         <div class="flex items-center justify-between">
-                            <h1 class="text-xl font-bold">TITLE</h1>
-                            <p class="font-bold text-xl"><i class="fa-solid fa-check-double text-green-500"></i><span> Mark As Read (<span id="read-count"> 0</span>) </span></p>
-                        </div> <hr class="border-t-2 border-dotted border-gray-500 my-8">
+                            <h1 class="text-lg font-bold">Title</h1>
+                            <p class="font-bold text-lg"><i class="fa-solid fa-check-double text-green-500"></i><span>
+                                    Mark As Read (<span id="read-count"> 0</span>) </span></p>
+                        </div>
+                        <hr class="border-t-2 border-dotted border-gray-500 my-8">
                         <div class="space-y-5" id="right-card">
 
                         </div>
@@ -160,7 +170,7 @@
         <!-- latest Post Section Start -->
         <section class=" mt-12 lg:mt-24">
             <!-- Heading -->
-            <div class="text-center mb-10">
+            <div class="text-center mb-8">
                 <h1 class="text-5xl font-black">
                     Latest Posts
                 </h1>
