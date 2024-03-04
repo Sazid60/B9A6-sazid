@@ -86,10 +86,10 @@ const displayLetsDiscussData = (allPosts) => {
         <div class="">
             <div class="flex gap-5 tex-xl">
                 <div>
-                    <p># <span> ${individualPost.category}</span></p>
+                    <p class="text-[15px]"># <span> ${individualPost.category}</span></p>
                 </div>
                 <div>
-                    <p>Author : <span> ${individualPost?.author?.name}</span></p>
+                    <p class="text-[15px]">Author : <span> ${individualPost?.author?.name}</span></p>
                 </div>
 
             </div>
