@@ -166,7 +166,7 @@ const toggleLoadingSpinner = (isLoading) => {
             rightTitleField.classList.remove('hidden')
             loadingSpinner.classList.add('hidden');
 
-        }, 1500); // 2000 milliseconds = 2 seconds
+        }, 2000); // 2000 milliseconds = 2 seconds
     } else {
         loadingSpinner.classList.add('hidden');
     }
