@@ -156,9 +156,11 @@ else{
 const toggleLoadingSpinner = (isLoading) => {
     const loadingSpinner = document.getElementById('loading-spinner');
     if (isLoading) {
-        leftCardContainer.classList.add('hidden')
-        rightTitleField.classList.add('hidden')
         loadingSpinner.classList.remove('hidden');
+        rightTitleField.classList.add('hidden')
+        leftCardContainer.classList.add('hidden')
+        
+        
         setTimeout(() => {
             leftCardContainer.classList.remove('hidden')
             rightTitleField.classList.remove('hidden')
