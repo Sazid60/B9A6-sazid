@@ -147,7 +147,7 @@ if(searchText === 'coding' || searchText === 'music' || searchText === 'comedy')
     toggleLoadingSpinner(true);
 }
 else{
-    alert("Please enter valid string ");
+    alert("Please Enter Valid Category");
   }
   searchField.value ='';
 }
