@@ -6,6 +6,7 @@ const letsDiscussContainer = document.getElementById('lets-discuss-container')
 const leftCardContainer = document.getElementById('left-card-container')
 const rightSideCardContainer = document.getElementById('right-card')
 const rightTitleField = document.getElementById('right-title-field')
+const latestPanelCard = document.getElementById('cards-showing')
 const countField = document.getElementById('read-count')
 
 // Latest post Data Fetch
@@ -18,6 +19,7 @@ const latestPosts = async () => {
 // Latest Section Data Display
 const displayLatestPost = (latestPosts) => {
     latestPosts.forEach(latestPost => {
+        toggleLoadingSpinner(true);
         // console.log(latestPost.cover_image)
         const latestCard = document.createElement('div')
         latestCard.innerHTML = `
@@ -155,20 +157,27 @@ else{
 //Loading Spinner for search and lets discuss section
 const toggleLoadingSpinner = (isLoading) => {
     const loadingSpinner = document.getElementById('loading-spinner');
+    const loadingSpinner2 = document.getElementById('loading-spinner-2');
     if (isLoading) {
         loadingSpinner.classList.remove('hidden');
+        loadingSpinner2.classList.remove('hidden');
         rightTitleField.classList.add('hidden')
         leftCardContainer.classList.add('hidden')
+        latestPanelCard.classList.add('hidden')
         
         
         setTimeout(() => {
             leftCardContainer.classList.remove('hidden')
             rightTitleField.classList.remove('hidden')
+            latestPanelCard.classList.remove('hidden')
             loadingSpinner.classList.add('hidden');
+            loadingSpinner2.classList.add('hidden');
+            
 
         }, 2000); // 2000 milliseconds = 2 seconds
     } else {
         loadingSpinner.classList.add('hidden');
+        loadingSpinner2.classList.add('hidden');
     }
 }
 
