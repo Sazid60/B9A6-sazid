@@ -5,6 +5,7 @@ const latestPostsContainer = document.getElementById('latest-Post-Container')
 const letsDiscussContainer = document.getElementById('lets-discuss-container')
 const leftCardContainer = document.getElementById('left-card-container')
 const rightSideCardContainer = document.getElementById('right-card')
+const rightTitleField = document.getElementById('right-title-field')
 const countField = document.getElementById('read-count')
 
 // Latest post Data Fetch
@@ -155,10 +156,15 @@ else{
 const toggleLoadingSpinner = (isLoading) => {
     const loadingSpinner = document.getElementById('loading-spinner');
     if (isLoading) {
+        leftCardContainer.classList.add('hidden')
+        rightTitleField.classList.add('hidden')
         loadingSpinner.classList.remove('hidden');
         setTimeout(() => {
+            leftCardContainer.classList.remove('hidden')
+            rightTitleField.classList.remove('hidden')
             loadingSpinner.classList.add('hidden');
-        }, 2000); // 2000 milliseconds = 2 seconds
+
+        }, 1500); // 2000 milliseconds = 2 seconds
     } else {
         loadingSpinner.classList.add('hidden');
     }
